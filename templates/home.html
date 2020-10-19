@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>credit_card_score</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+    <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">CREDIT SCORE</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+    <div class="container">
+
+        <form action="\predict" method="post">
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Status of Bank Account</h5>
+                            <select name="stat" id="stat" required="required">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Credit history</h5>
+                             <select name="cred_history" id="cred_history" required="required">
+                                <option value="0">delay in paying off in the past</option>
+                                <option value="1">critical account/other credits elsewhere</option>
+                                <option value="2">no credits taken/all credits paid back duly</option>
+                                <option value="3">existing credits paid back duly till now</option>
+                                <option value="4">all credits at this bank paid back duly</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Duration(in months)</h5>
+                            <input type="number" name="dur" id="dur" required="required">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Savings</h5>
+                             <select name="savings" id="savings" required="required">
+                                <option value="0">unknown/no savings account</option>
+                                <option value="1"><  100 DM</option>
+                                <option value="2">100 <= ... <  500 DM</option>
+                                <option value="3">500 <= ... < 1000 DM </option>
+                                <option value="4">>= 1000 DM</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Property</h5>
+                             <select name="prop" id="prop" required="required">
+                                <option value="0">unknown / no property</option>
+                                <option value="1">car or other</option>
+                                <option value="2">building soc. /savings agr./life insurance</option>
+                                <option value="3">real estate</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">credit amount in DM</h5>
+                            <input type="number" name="amou" id="amou" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Employment Duration</h5>
+                            <select name="emp_dur" id="emp_dur" required="required">
+                                <option value="0">unemployed</option>
+                                <option value="1">< 1 year</option>
+                                <option value="2">1-4 years</option>
+                                <option value="3">4-7 years</option>
+                                <option value="4">>=7 years</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Purpose</h5>
+                            <select name="purp" id="purp" required="required">
+                                <option value="0">others</option>
+                                <option value="1">car(new)</option>
+                                <option value="2">car(old)</option>
+                                <option value="3">furniture/equipment</option>
+                                <option value="4">radio/television</option>
+                                <option value="5">domestic appliances</option>
+                                <option value="6">repairs</option>
+                                <option value="7">education</option>
+                                <option value="8">vacation</option>
+                                <option value="9">retraining</option>
+                                <option value="10">business</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Age</h5>
+                            <input type="number" name="age" id="age" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Insatallment rate</h5>
+                            <select name="rate" id="rate" required="required">
+                                <option value="0">>=35</option>
+                                <option value="1">25-35</option>
+                                <option value="2">20-25</option>
+                                <option value="3"><20</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
